@@ -276,7 +276,7 @@ export function SettingsPanel({ snapshot, onCommand: command, onRun: run, onSnap
           {category === 'statistics' && statisticsPanel}
           {category === 'data' && <div data-setting-id="data" tabIndex={-1} className={`settings-external-panel${highlighted === 'data' ? ' setting-search-highlight' : ''}`}>{dataPanel}</div>}
           {category === 'about' && <>
-            <div data-setting-id="about" tabIndex={-1} className={`about-sonora${highlighted === 'about' ? ' setting-search-highlight' : ''}`}><AudioLines size={29} /><div><h3>{t('app.productName')}</h3><p>{t('settings.aboutDescription')}</p><small>{t('settings.version', { version })}</small></div></div>
+            <div data-setting-id="about" tabIndex={-1} className={`about-app${highlighted === 'about' ? ' setting-search-highlight' : ''}`}><AudioLines size={29} /><div><h3>{t('app.productName')}</h3><p>{t('settings.aboutDescription')}</p><small>{t('settings.version', { version })}</small></div></div>
             <SettingsSection title={t('settings.engine')}>
               <div {...anchorProps('engine')}>
                 <div><label>{t('settings.engine')}</label><p>{t('settings.engineDescription')}</p></div>

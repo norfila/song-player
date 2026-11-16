@@ -247,7 +247,7 @@ impl PlayerService {
             sections.insert(section, value);
         }
         Ok(
-            json!({ "format": "sonora-settings", "version": 1, "exportedAt": now() * 1000, "sections": sections }),
+            json!({ "format": "song-player-settings", "version": 1, "exportedAt": now() * 1000, "sections": sections }),
         )
     }
 
@@ -261,7 +261,7 @@ impl PlayerService {
             return Err(invalid("Settings document exceeds 2 MiB"));
         }
         let document: Document = decode(&document)?;
-        if document.format != "sonora-settings"
+        if document.format != "song-player-settings"
             || document.version != 1
             || document.exported_at < 0
             || document

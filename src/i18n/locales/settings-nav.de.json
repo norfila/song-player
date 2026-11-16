@@ -66,7 +66,7 @@
       "import": "backup sicherung laden importieren wiederherstellen einstellungen",
       "undo": "zurück rückgängig undo wiederherstellen import",
       "engine": "libmpv mpv audio engine version fehler technisch diagnose",
-      "version": "song player sonora version info über",
+      "version": "song player version info über",
       "warnings": "warnung hinweis fehler diagnose problem",
       "statistics": "statistik hörverlauf historie erfassung aufzeichnen gehört zählgrenze prozent sekunden zeit exportieren löschen"
     }

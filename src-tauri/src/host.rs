@@ -910,7 +910,7 @@ pub fn run() {
             }
         })
         .setup(move |app| {
-            let custom_data = std::env::var_os("SONORA_DATA_DIR").map(PathBuf::from);
+            let custom_data = std::env::var_os("SONG_PLAYER_DATA_DIR").map(PathBuf::from);
             let data_dir = custom_data.clone().unwrap_or(app.path().app_data_dir()?);
             let cover_dir = match custom_data {
                 Some(dir) => dir.join("covers"),
@@ -957,7 +957,7 @@ pub fn run() {
             let audio = MpvEngine::new(&search)
                 .map(|e| Box::new(NativeAudio(e)) as Box<dyn AudioPort>)
                 .map_err(|e| e.to_string());
-            let store = Store::open(&data_dir.join("sonora.sqlite"))?;
+            let store = Store::open(&data_dir.join("song-player.sqlite"))?;
             let mut service = PlayerService::new(Box::new(SqliteState(store)), audio)?;
             for session in &mut service.state.sessions {
                 session.sanitize();

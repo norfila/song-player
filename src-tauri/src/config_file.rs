@@ -29,7 +29,7 @@ fn create_temporary(directory: &Path) -> io::Result<(TemporaryFile, File)> {
             .unwrap_or_default()
             .as_nanos();
         let path = directory.join(format!(
-            ".sonora-config-{}-{timestamp}-{nonce}.tmp",
+            ".song-player-config-{}-{timestamp}-{nonce}.tmp",
             std::process::id()
         ));
         match OpenOptions::new().write(true).create_new(true).open(&path) {
@@ -104,7 +104,7 @@ mod tests {
                 .unwrap()
                 .as_nanos();
             let path = std::env::temp_dir().join(format!(
-                "Sonora-config-test-{}-{timestamp}-{nonce}",
+                "SongPlayer-config-test-{}-{timestamp}-{nonce}",
                 std::process::id()
             ));
             fs::create_dir(&path).unwrap();

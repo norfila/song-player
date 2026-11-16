@@ -18,7 +18,7 @@ if ((Test-Path -LiteralPath $audioToolsExecutable) -and ((Get-FileHash -LiteralP
     Write-Host "FFmpeg $audioToolsVersion is already installed and verified."
     exit 0
 }
-$audioToolsWork = Join-Path ([IO.Path]::GetTempPath()) ('AudioPlayer-ffmpeg-' + [Guid]::NewGuid().ToString('N'))
+$audioToolsWork = Join-Path ([IO.Path]::GetTempPath()) ('SongPlayer-ffmpeg-' + [Guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $audioToolsWork | Out-Null
 $audioToolsDownload = Join-Path $audioToolsWork $audioToolsArchive
 Write-Host "Downloading pinned FFmpeg $audioToolsVersion (Windows x64)..."

@@ -66,7 +66,7 @@
       "import": "backup load import restore settings",
       "undo": "undo restore revert import",
       "engine": "libmpv mpv audio engine version error technical diagnostics",
-      "version": "song player sonora version information about",
+      "version": "song player version information about",
       "warnings": "warning notice error diagnostics problem",
       "statistics": "statistics history recording heard played threshold percent seconds time export delete clear"
     }

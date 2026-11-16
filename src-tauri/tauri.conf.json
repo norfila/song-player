@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Song Player",
-  "version": "0.4.3",
-  "identifier": "dev.sonora.player",
+  "version": "0.5.0",
+  "identifier": "io.github.norfila.songplayer",
   "build": {
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
@@ -30,8 +30,8 @@
       "assetProtocol": {
         "enable": true,
         "scope": [
-          "$APPDATA/dev.sonora.player/covers/**",
-          "$APPLOCALDATA/dev.sonora.player/covers/**",
+          "$APPDATA/io.github.norfila.songplayer/covers/**",
+          "$APPLOCALDATA/io.github.norfila.songplayer/covers/**",
           "$APPCACHE/**"
         ]
       }
@@ -46,8 +46,7 @@
     ],
     "resources": {
       "resources/mpv/": "mpv/",
-      "resources/ffmpeg/": "ffmpeg/",
-      "windows/LICENSE-TAURI-MIT": "installer-notices/LICENSE-TAURI-MIT"
+      "resources/ffmpeg/": "ffmpeg/"
     },
     "fileAssociations": [
       {
@@ -72,7 +71,7 @@
           "m3u",
           "m3u8"
         ],
-        "name": "Sonora.Audio",
+        "name": "SongPlayer.Audio",
         "description": "Song Player audio",
         "role": "Viewer"
       }
@@ -85,10 +84,10 @@
           "English"
         ],
         "displayLanguageSelector": true,
-        "installerHooks": "./windows/hooks.nsh",
-        "template": "./windows/installer.nsi"
+        "installerHooks": "./windows/hooks.nsh"
       }
     },
+    "publisher": "norfila",
     "shortDescription": "Local audio player",
     "category": "Music"
   }

@@ -75,10 +75,10 @@
 .settings-workspace .engine-state.ready { color: var(--accent); }
 .settings-workspace .technical-details { color: var(--secondary); }
 .settings-workspace .technical-details pre { color: var(--secondary); background: var(--bg); border: 1px solid var(--border); }
-.settings-workspace .about-sonora { margin-bottom: calc(22px * var(--spacing)); padding: calc(20px * var(--spacing)); border: 1px solid var(--border); border-radius: calc(var(--radius) * 1.125); color: var(--accent); background: var(--panel); }
-.settings-workspace .about-sonora h3 { color: var(--text); }
-.settings-workspace .about-sonora p { color: var(--secondary); font-size: calc(11px * var(--font-scale)); }
-.settings-workspace .about-sonora small { color: var(--muted); font-size: calc(10px * var(--font-scale)); }
+.settings-workspace .about-app { margin-bottom: calc(22px * var(--spacing)); padding: calc(20px * var(--spacing)); border: 1px solid var(--border); border-radius: calc(var(--radius) * 1.125); color: var(--accent); background: var(--panel); }
+.settings-workspace .about-app h3 { color: var(--text); }
+.settings-workspace .about-app p { color: var(--secondary); font-size: calc(11px * var(--font-scale)); }
+.settings-workspace .about-app small { color: var(--muted); font-size: calc(10px * var(--font-scale)); }
 .settings-results-list { margin-top: calc(20px * var(--spacing)); display: flex; flex-direction: column; gap: calc(8px * var(--spacing)); }
 .settings-search-result { display: flex; align-items: center; justify-content: space-between; gap: calc(15px * var(--spacing)); width: 100%; padding: calc(17px * var(--spacing)) calc(19px * var(--spacing)); text-align: left; border: 1px solid var(--border); border-radius: var(--radius); color: var(--secondary); background: var(--panel); }
 .settings-search-result:hover { background: var(--surface-hover); border-color: var(--accent); }
@@ -114,7 +114,7 @@
 }
 @container settings (max-width: 480px) {
   .theme-editor-heading, .theme-layout-field { flex-direction: column; align-items: flex-start; gap: calc(12px * var(--spacing)); }
-  .theme-range-control, .theme-layout-field .sonora-select { width: 100%; }
+  .theme-range-control, .theme-layout-field .app-select { width: 100%; }
   .theme-color-grid, .configuration-sections { grid-template-columns: minmax(0, 1fr); }
   .appearance-save-bar { align-items: flex-start; flex-direction: column; }
   .appearance-save-bar > div { width: 100%; }

@@ -1,4 +1,4 @@
-"""Generate Sonora's code-native application icon (requires Pillow)."""
+"""Generate Song Player's code-native application icon (requires Pillow)."""
 from pathlib import Path
 from PIL import Image, ImageDraw
 

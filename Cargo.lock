@@ -2869,7 +2869,7 @@ checksum = "f6b464fbc74e149a392436b17d523f769e057cb6877f6a5c4618bc6f11800548"
 
 [[package]]
 name = "player-application"
-version = "0.4.3"
+version = "0.5.0"
 dependencies = [
  "player-domain",
  "player-infrastructure",
@@ -2880,7 +2880,7 @@ dependencies = [
 
 [[package]]
 name = "player-domain"
-version = "0.4.3"
+version = "0.5.0"
 dependencies = [
  "serde",
  "serde_json",
@@ -3634,8 +3634,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "sonora"
-version = "0.4.3"
+name = "song-player"
+version = "0.5.0"
 dependencies = [
  "notify",
  "player-application",

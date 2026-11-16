@@ -1,12 +1,12 @@
 [package]
-name = "sonora"
+name = "song-player"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
-default-run = "sonora"
+default-run = "song-player"
 
 [lib]
-name = "sonora_lib"
+name = "song_player_lib"
 crate-type = ["rlib"]
 
 [build-dependencies]

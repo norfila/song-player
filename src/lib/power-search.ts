@@ -38,7 +38,7 @@ export function rankSearch(items: SearchDocument[], query: string, usage: Search
     return { item, score: score ? score + boost : 0 };
   }).filter(result => result.score > 0).sort((a, b) => b.score - a.score || a.item.label.localeCompare(b.item.label)).slice(0, 60);
 }
-export const SEARCH_USAGE_KEY = 'audio-player.search-usage.v1';
+export const SEARCH_USAGE_KEY = 'song-player.search-usage.v1';
 export function loadSearchUsage(): SearchUsage {
   try { const value: unknown = JSON.parse(localStorage.getItem(SEARCH_USAGE_KEY) || '{}'); if (!value || typeof value !== 'object' || Array.isArray(value)) return {}; return Object.fromEntries(Object.entries(value).filter(([, entry]) => entry && typeof entry.count === 'number' && entry.count > 0 && Number.isFinite(entry.usedAt)).slice(-2000)); } catch { return {}; }
 }

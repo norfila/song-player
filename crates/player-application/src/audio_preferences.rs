@@ -1,7 +1,7 @@
 use crate::{AppResult, EqualizerSettings, GainGrouping, PlayerService, SleepMode};
 
-const EQUALIZER_LABEL: &str = "@sonora-equalizer";
-const GAIN_LABEL: &str = "@sonora-replaygain";
+const EQUALIZER_LABEL: &str = "@songplayer-equalizer";
+const GAIN_LABEL: &str = "@songplayer-replaygain";
 
 impl PlayerService {
     pub(crate) fn apply_equalizer(&mut self, value: &EqualizerSettings) -> AppResult<()> {
@@ -13,7 +13,7 @@ impl PlayerService {
             // Removing an absent named filter is an mpv error: query first.
             if engine
                 .get_property("af")
-                .is_some_and(|s| s.contains("sonora-equalizer"))
+                .is_some_and(|s| s.contains("songplayer-equalizer"))
             {
                 engine.command(&["af", "remove", EQUALIZER_LABEL])?;
             }
@@ -83,7 +83,7 @@ impl PlayerService {
             ])?;
         } else if engine
             .get_property("af")
-            .is_some_and(|s| s.contains("sonora-replaygain"))
+            .is_some_and(|s| s.contains("songplayer-replaygain"))
         {
             engine.command(&["af", "remove", GAIN_LABEL])?;
         }

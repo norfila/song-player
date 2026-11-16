@@ -1,6 +1,6 @@
 # Song Player
 
-Local audio player for Windows, version **0.4.3**. Tauri 2 and React provide the
+Local audio player for Windows, version **0.5.0**. Tauri 2 and React provide the
 interface; Rust manages playback, library, playlists and queues. Native audio
 output is handled by libmpv. Audio files stay where they are stored.
 
@@ -101,7 +101,7 @@ The DLL is packaged as an app resource. Build provenance and checksums are in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 A compatible runtime of your own can be specified through
-`AUDIOPLAYER_MPV_PATH`, either as a library file or as a folder. The bundled
+`SONG_PLAYER_MPV_PATH`, either as a library file or as a folder. The bundled
 runtime takes precedence. On macOS/Linux a matching `libmpv.2.dylib` or
 `libmpv.so.2` and its native dependencies have to be provided separately.
 
@@ -117,7 +117,7 @@ runtime; packaging has not been verified there yet.
 . .\scripts\toolchain.ps1
 npm run build
 cargo test
-cargo check -p sonora
+cargo check -p song-player
 npm run test:ui
 npm run test:locales
 ```
@@ -150,11 +150,11 @@ tools.
 ## Separate test profile
 
 By default Song Player uses the platform-specific Tauri directories for app
-data and cover cache. The database is named `sonora.sqlite`. For a test with
+data and cover cache. The database is named `song-player.sqlite`. For a test with
 separate settings and library, close running Song Player windows first:
 
 ```powershell
-$env:SONORA_DATA_DIR = Join-Path (Get-Location) '.tmp\test-profile'
+$env:SONG_PLAYER_DATA_DIR = Join-Path (Get-Location) '.tmp\test-profile'
 powershell -File .\scripts\desktop.ps1 dev
 ```
 
@@ -163,7 +163,7 @@ variable applies to the current shell and its child processes. To return to the
 normal profile:
 
 ```powershell
-Remove-Item Env:SONORA_DATA_DIR
+Remove-Item Env:SONG_PLAYER_DATA_DIR
 ```
 
 ## Status and limits
@@ -178,13 +178,16 @@ not implemented yet. Bit-perfect audio output is not guaranteed. Format
 support, gapless playback and device behaviour also depend on the specific
 engine build and audio device.
 
-The visible name is now Song Player. The internal identifiers
-`dev.sonora.player`, `sonora.sqlite`, `Sonora.Audio`, `SONORA_DATA_DIR` and the
-export formats `sonora-theme` and `sonora-settings` are kept for existing
-profiles, file associations and backups. Settings files contain neither music
-files nor playlist images, favorites or listening history; the history has its
-own export. Automatically relocating moved tracks uses only unambiguous content
-checksums of missing files, no guessed metadata.
+Settings files contain neither music files nor playlist images, favorites or
+listening history; the history has its own export. Automatically relocating
+moved tracks uses only unambiguous content checksums of missing files, no
+guessed metadata.
+
+Version 0.5.0 renamed the internal identifiers left over from earlier project
+names. The app data now lives under `io.github.norfila.songplayer`, and theme
+and settings exports use the formats `song-player-theme` and
+`song-player-settings`. Builds before 0.5.0 are not upgraded in place, and
+their data folder and export files are not picked up automatically.
 
 ## License
 

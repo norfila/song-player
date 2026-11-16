@@ -1,4 +1,4 @@
-.sonora-select {
+.app-select {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -17,14 +17,14 @@
   -webkit-app-region: no-drag;
   transition: border-color .15s, background .15s;
 }
-.sonora-select:hover:not(:disabled) { background: var(--surface); border-color: var(--border-strong); }
-.sonora-select.is-open { border-color: var(--accent); background: var(--surface); }
-.sonora-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.sonora-select-chevron { margin-left: 3px; color: var(--secondary); transition: transform .15s; }
-.sonora-select.is-open > .sonora-select-chevron { transform: rotate(180deg); }
-.sonora-select-icon { display: inline-flex; align-items: center; flex-shrink: 0; color: var(--secondary); }
-.sonora-select-value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.sonora-select-list {
+.app-select:hover:not(:disabled) { background: var(--surface); border-color: var(--border-strong); }
+.app-select.is-open { border-color: var(--accent); background: var(--surface); }
+.app-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.app-select-chevron { margin-left: 3px; color: var(--secondary); transition: transform .15s; }
+.app-select.is-open > .app-select-chevron { transform: rotate(180deg); }
+.app-select-icon { display: inline-flex; align-items: center; flex-shrink: 0; color: var(--secondary); }
+.app-select-value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.app-select-list {
   z-index: 1000;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -38,7 +38,7 @@
   font-family: var(--font-family);
   -webkit-app-region: no-drag;
 }
-.sonora-select-option {
+.app-select-option {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,12 +50,12 @@
   cursor: pointer;
   user-select: none;
 }
-.sonora-select-option > span { min-width: 0; overflow-wrap: anywhere; }
-.sonora-select-option.is-active { background: var(--selection); }
-.sonora-select-option.is-selected { color: var(--accent); }
-.sonora-select-option[aria-disabled="true"] { opacity: .4; cursor: default; }
-.sonora-select-check { visibility: hidden; flex-shrink: 0; }
-.sonora-select-option.is-selected .sonora-select-check { visibility: visible; }
+.app-select-option > span { min-width: 0; overflow-wrap: anywhere; }
+.app-select-option.is-active { background: var(--selection); }
+.app-select-option.is-selected { color: var(--accent); }
+.app-select-option[aria-disabled="true"] { opacity: .4; cursor: default; }
+.app-select-check { visibility: hidden; flex-shrink: 0; }
+.app-select-option.is-selected .app-select-check { visibility: visible; }
 @media (prefers-reduced-motion: reduce) {
-  .sonora-select, .sonora-select-chevron { transition: none; }
+  .app-select, .app-select-chevron { transition: none; }
 }

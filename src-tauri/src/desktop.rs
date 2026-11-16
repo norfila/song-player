@@ -118,7 +118,7 @@ mod windows {
         let app_name = current_exe
             .file_name()
             .and_then(|name| name.to_str())
-            .unwrap_or("sonora.exe");
+            .unwrap_or("song-player.exe");
         let missing_extensions = extensions
             .filter(|extension| {
                 !associated_executable(extension).is_some_and(|executable| {
@@ -139,9 +139,9 @@ mod windows {
     }
 
     pub(super) fn open_default_apps_settings() -> AppResult<()> {
-        // Per-user installer registers "Sonora" in HKCU RegisteredApplications.
+        // Per-user installer registers "SongPlayer" in HKCU RegisteredApplications.
         // Older Windows versions gracefully show the general Default Apps page.
-        let uri = wide("ms-settings:defaultapps?registeredAppUser=Sonora");
+        let uri = wide("ms-settings:defaultapps?registeredAppUser=SongPlayer");
         let operation = wide("open");
         // SAFETY: Only a fixed Microsoft Settings URI is passed, never user
         // input or a command string. No associations are written here.

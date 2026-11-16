@@ -8,7 +8,7 @@ export type TransferSection = typeof TRANSFER_SECTIONS[number];
 export const PORTABLE_SECTIONS: TransferSection[] = ['general', 'appearance', 'audio', 'shortcuts', 'layout'];
 
 export interface SettingsDocument {
-  format: 'sonora-settings';
+  format: 'song-player-settings';
   version: 1;
   exportedAt: number;
   sections: {
@@ -31,7 +31,7 @@ const invalid = (): never => { throw new Error('invalid_settings_file'); };
 
 /** Validate before displaying an import review; the native layer validates again on apply. */
 export function parseSettingsDocument(value: unknown): SettingsDocument {
-  if (!object(value) || value.format !== 'sonora-settings' || value.version !== 1 || !object(value.sections)
+  if (!object(value) || value.format !== 'song-player-settings' || value.version !== 1 || !object(value.sections)
     || !keysOnly(value, ['format', 'version', 'exportedAt', 'sections']) || bytes(JSON.stringify(value)) > 2 * 1024 * 1024) return invalid();
   const sections = { ...value.sections };
   if (!Object.keys(sections).length || Object.keys(sections).some(key => !(TRANSFER_SECTIONS as readonly string[]).includes(key))) return invalid();

@@ -4,7 +4,7 @@ members = ["crates/player-domain", "crates/player-application", "crates/player-i
 default-members = ["crates/player-domain", "crates/player-application", "crates/player-infrastructure"]
 
 [workspace.package]
-version = "0.4.3"
+version = "0.5.0"
 edition = "2021"
 license = "GPL-3.0-or-later"
 

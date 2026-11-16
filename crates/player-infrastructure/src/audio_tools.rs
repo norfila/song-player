@@ -56,7 +56,7 @@ fn sibling(path: &Path) -> Result<SiblingFile, InfraError> {
             .as_nanos();
         let extension = path.extension().and_then(|s| s.to_str()).unwrap_or("tmp");
         let temporary = directory.join(format!(
-            ".audio-player-{}-{now}-{nonce}.{extension}",
+            ".song-player-{}-{now}-{nonce}.{extension}",
             std::process::id()
         ));
         match OpenOptions::new()

@@ -21,7 +21,7 @@ if ((Test-Path -LiteralPath $mpvDll) -and ((Get-FileHash -LiteralPath $mpvDll -A
     exit 0
 }
 
-$mpvWork = Join-Path ([System.IO.Path]::GetTempPath()) ('AudioPlayer-mpv-' + [Guid]::NewGuid().ToString('N'))
+$mpvWork = Join-Path ([System.IO.Path]::GetTempPath()) ('SongPlayer-mpv-' + [Guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $mpvWork | Out-Null
 $mpvDownload = Join-Path $mpvWork $mpvArchive
 Write-Host "Downloading pinned libmpv $mpvRelease (Windows x64 baseline)..."

@@ -76,7 +76,7 @@ struct TestAudioFiles {
 impl TestAudioFiles {
     fn new() -> Self {
         let directory =
-            std::env::temp_dir().join(format!("AudioPlayer-service-{}", uuid::Uuid::new_v4()));
+            std::env::temp_dir().join(format!("SongPlayer-service-{}", uuid::Uuid::new_v4()));
         std::fs::create_dir(&directory).unwrap();
         let paths = ["Erster – Grüße 🎵.wav", "Zweiter – 日本語.wav"]
             .into_iter()
@@ -301,7 +301,7 @@ fn normalization_can_toggle_during_playback_without_removing_other_audio_filters
     )
     .unwrap();
     let filters = engine.lock().unwrap().get_property("af").unwrap();
-    assert!(filters.contains("sonora-loudness"), "{filters}");
+    assert!(filters.contains("songplayer-loudness"), "{filters}");
     assert!(filters.contains("dynaudnorm"), "{filters}");
     assert!(filters.contains("test-volume"), "{filters}");
     service
@@ -314,12 +314,12 @@ fn normalization_can_toggle_during_playback_without_removing_other_audio_filters
         .dispatch(PlayerCommand::SetLoudnessNormalization { enabled: true })
         .unwrap();
     let filters = engine.lock().unwrap().get_property("af").unwrap();
-    assert_eq!(filters.matches("sonora-loudness").count(), 1, "{filters}");
+    assert_eq!(filters.matches("songplayer-loudness").count(), 1, "{filters}");
     service
         .dispatch(PlayerCommand::SetLoudnessNormalization { enabled: false })
         .unwrap();
     let filters = engine.lock().unwrap().get_property("af").unwrap();
-    assert!(!filters.contains("sonora-loudness"), "{filters}");
+    assert!(!filters.contains("songplayer-loudness"), "{filters}");
     assert!(filters.contains("test-volume"), "{filters}");
     service
         .dispatch(PlayerCommand::SetLoudnessNormalization { enabled: true })
@@ -361,7 +361,7 @@ fn settings_import_and_undo_preserve_native_stream_position_pause_and_other_filt
     let position = service.playback().position;
     let track = current(&service).unwrap().to_owned();
     service.dispatch(PlayerCommand::ImportSettings {
-        document: serde_json::json!({ "format": "sonora-settings", "version": 1, "exportedAt": 0,
+        document: serde_json::json!({ "format": "song-player-settings", "version": 1, "exportedAt": 0,
             "sections": { "audio": { "volume": 38, "muted": true, "replayGain": true, "loudnessNormalization": true } } }),
         sections: vec!["audio".into()],
     }).unwrap();
@@ -378,7 +378,7 @@ fn settings_import_and_undo_preserve_native_stream_position_pause_and_other_filt
     );
     let filters = engine.lock().unwrap().get_property("af").unwrap();
     assert!(
-        filters.contains("sonora-loudness") && filters.contains("test-volume"),
+        filters.contains("songplayer-loudness") && filters.contains("test-volume"),
         "{filters}"
     );
     assert_eq!(
@@ -396,7 +396,7 @@ fn settings_import_and_undo_preserve_native_stream_position_pause_and_other_filt
     );
     let filters = engine.lock().unwrap().get_property("af").unwrap();
     assert!(
-        !filters.contains("sonora-loudness") && filters.contains("test-volume"),
+        !filters.contains("songplayer-loudness") && filters.contains("test-volume"),
         "{filters}"
     );
     assert_eq!(service.state.settings.volume, 75.);
@@ -457,8 +457,8 @@ fn native_equalizer_folder_gain_and_sleep_timer_preserve_filters_and_pause_at_tr
         .unwrap();
     let filters = engine.lock().unwrap().get_property("af").unwrap();
     assert!(
-        filters.contains("sonora-equalizer")
-            && filters.contains("sonora-replaygain")
+        filters.contains("songplayer-equalizer")
+            && filters.contains("songplayer-replaygain")
             && filters.contains("test-volume"),
         "{filters}"
     );
@@ -499,8 +499,8 @@ fn native_equalizer_folder_gain_and_sleep_timer_preserve_filters_and_pause_at_tr
         .unwrap();
     let filters = engine.lock().unwrap().get_property("af").unwrap();
     assert!(
-        !filters.contains("sonora-equalizer")
-            && !filters.contains("sonora-replaygain")
+        !filters.contains("songplayer-equalizer")
+            && !filters.contains("songplayer-replaygain")
             && filters.contains("test-volume"),
         "{filters}"
     );

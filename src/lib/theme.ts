@@ -91,11 +91,11 @@ export function createCustomTheme(theme: ThemeDefinition, name: string, existing
 export function parseThemeFile(contents: string): ThemeDefinition {
   if (contents.length > 100_000) throw new Error('Theme file is too large');
   const value: unknown = JSON.parse(contents);
-  if (!record(value) || value.format !== 'sonora-theme' || value.version !== 1) throw new Error('Unsupported theme file');
+  if (!record(value) || value.format !== 'song-player-theme' || value.version !== 1) throw new Error('Unsupported theme file');
   return validateTheme(value.theme);
 }
 export function serializeThemeFile(theme: ThemeDefinition): string {
-  return `${JSON.stringify({ format: 'sonora-theme', version: 1, theme: validateTheme(theme) }, null, 2)}\n`;
+  return `${JSON.stringify({ format: 'song-player-theme', version: 1, theme: validateTheme(theme) }, null, 2)}\n`;
 }
 
 export function buildThemeVariables(themeValue: ThemeDefinition): Record<string, string> {

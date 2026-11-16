@@ -268,7 +268,7 @@ impl PlayerService {
     pub fn export_history(&mut self) -> AppResult<serde_json::Value> {
         self.flush_listening()?;
         Ok(
-            serde_json::json!({"format":"audio-player-listening-history","version":1,"exportedAt":now()*1000,
+            serde_json::json!({"format":"song-player-listening-history","version":1,"exportedAt":now()*1000,
             "threshold":self.state.settings.statistics,"events":self.store.listening_history(None,None)?}),
         )
     }

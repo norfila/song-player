@@ -327,8 +327,8 @@ fn equalizer_and_analyzed_folder_gain_own_only_their_filters() {
         .unwrap();
     {
         let e = engine.lock().unwrap();
-        assert!(e.filters["@sonora-equalizer"].contains("volume=-5.0000dB"));
-        assert!(e.filters["@sonora-replaygain"].contains("3.0000dB"));
+        assert!(e.filters["@songplayer-equalizer"].contains("volume=-5.0000dB"));
+        assert!(e.filters["@songplayer-replaygain"].contains("3.0000dB"));
         assert_eq!(e.properties["replaygain"], "no");
         assert!(e.filters.contains_key("@other"));
     }
@@ -341,7 +341,7 @@ fn equalizer_and_analyzed_folder_gain_own_only_their_filters() {
         .lock()
         .unwrap()
         .filters
-        .contains_key("@sonora-equalizer"));
+        .contains_key("@songplayer-equalizer"));
     assert!(engine.lock().unwrap().filters.contains_key("@other"));
     store.0.lock().unwrap().fail_save = true;
     assert!(service
@@ -498,7 +498,7 @@ fn new_settings_roundtrip_optional_sections_and_legacy_import_preserves_omitted_
     assert_eq!(settings.global_search.binding, "Alt+KeyP");
     command(
         &mut imported,
-        serde_json::json!({"type":"import_settings","document":{"format":"sonora-settings","version":1,"exportedAt":0,"sections":{"general":{"language":"en","closeToTray":true},"audio":{"volume":45,"muted":false,"replayGain":false,"loudnessNormalization":false}}},"sections":["general","audio"]}),
+        serde_json::json!({"type":"import_settings","document":{"format":"song-player-settings","version":1,"exportedAt":0,"sections":{"general":{"language":"en","closeToTray":true},"audio":{"volume":45,"muted":false,"replayGain":false,"loudnessNormalization":false}}},"sections":["general","audio"]}),
     );
     assert_eq!(imported.state.settings.statistics.percent, 75.);
     assert_eq!(imported.state.settings.equalizer.bands[0], 3.);

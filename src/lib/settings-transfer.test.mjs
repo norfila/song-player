@@ -4,7 +4,7 @@ import { availableSections, defaultImportSections, parseSettingsDocument } from 
 import { BUILTIN_THEMES } from './theme.ts';
 import { DEFAULT_SHORTCUTS } from './shortcuts.ts';
 
-const document = sections => ({ format: 'sonora-settings', version: 1, exportedAt: 1_700_000_000_000, sections });
+const document = sections => ({ format: 'song-player-settings', version: 1, exportedAt: 1_700_000_000_000, sections });
 
 test('portable categories are selected while machine-specific values require an explicit choice', () => {
   const parsed = parseSettingsDocument(document({ general: { language: 'de', closeToTray: false }, device: { outputDevice: 'auto' }, library: { folders: ['C:/Music'] } }));
@@ -14,7 +14,7 @@ test('portable categories are selected while machine-specific values require an 
 
 test('backup review rejects wrong formats, future versions, unknown categories and malformed values', () => {
   for (const invalid of [
-    { ...document({}), format: 'sonora-theme' },
+    { ...document({}), format: 'song-player-theme' },
     { ...document({ general: { language: 'en', closeToTray: false } }), version: 2 },
     document({ unknown: {} }), document({}), document({ general: { language: ['de'], closeToTray: true } }),
     document({ audio: { volume: 101, muted: false, replayGain: false, loudnessNormalization: true } }),

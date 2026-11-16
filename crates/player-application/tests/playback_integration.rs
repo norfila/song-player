@@ -144,7 +144,7 @@ fn sections(names: &[&str]) -> Vec<String> {
 }
 
 fn transfer_document(values: serde_json::Value) -> serde_json::Value {
-    serde_json::json!({ "format": "sonora-settings", "version": 1, "exportedAt": 1_700_000_000_000_i64, "sections": values })
+    serde_json::json!({ "format": "song-player-settings", "version": 1, "exportedAt": 1_700_000_000_000_i64, "sections": values })
 }
 
 fn test_appearance() -> serde_json::Value {
@@ -518,7 +518,7 @@ fn failed_settings_save_rolls_back_preferences_native_audio_and_undo_snapshot() 
     assert_eq!(engine.properties["replaygain"], "no");
     assert_eq!(
         engine.commands.last().unwrap(),
-        &["af", "remove", "@sonora-loudness"]
+        &["af", "remove", "@songplayer-loudness"]
     );
 }
 
@@ -1338,7 +1338,7 @@ fn normalization_owns_one_filter_persists_and_restores_without_enabling_replayga
     let restored_commands = restored_engine.lock().unwrap().commands.clone();
     assert_eq!(restored_commands.len(), 1);
     assert_eq!(restored_commands[0][0..2], ["af", "add"]);
-    assert!(restored_commands[0][2].starts_with("@sonora-loudness:lavfi=[dynaudnorm="));
+    assert!(restored_commands[0][2].starts_with("@songplayer-loudness:lavfi=[dynaudnorm="));
     assert_eq!(engine.lock().unwrap().commands, restored_commands);
     restored
         .dispatch(PlayerCommand::SetLoudnessNormalization { enabled: false })
@@ -1346,7 +1346,7 @@ fn normalization_owns_one_filter_persists_and_restores_without_enabling_replayga
     assert!(!restored.state.settings.loudness_normalization);
     assert_eq!(
         restored_engine.lock().unwrap().commands.last().unwrap(),
-        &["af", "remove", "@sonora-loudness"]
+        &["af", "remove", "@songplayer-loudness"]
     );
 }
 

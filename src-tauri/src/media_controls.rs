@@ -90,7 +90,7 @@ mod windows_controls {
             }
         };
         let mut controls = match MediaControls::new(PlatformConfig {
-            dbus_name: "sonora",
+            dbus_name: "songplayer",
             display_name: "Song Player",
             hwnd: Some(hwnd as *mut c_void),
         }) {

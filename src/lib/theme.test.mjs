@@ -7,7 +7,7 @@ test('all bundled themes round-trip with complete, valid colors', () => {
   assert.equal(resolveTheme(DEFAULT_APPEARANCE).id, 'dark');
 });
 test('theme import rejects unsupported versions, oversized files and CSS injection', () => {
-  assert.throws(() => parseThemeFile(JSON.stringify({ format: 'sonora-theme', version: 2, theme: BUILTIN_THEMES[0] })));
+  assert.throws(() => parseThemeFile(JSON.stringify({ format: 'song-player-theme', version: 2, theme: BUILTIN_THEMES[0] })));
   assert.throws(() => parseThemeFile(' '.repeat(100_001)));
   assert.throws(() => validateTheme({ ...BUILTIN_THEMES[0], colors: { ...BUILTIN_THEMES[0].colors, accent: 'red; background: url(x)' } }));
   assert.throws(() => validateTheme({ ...BUILTIN_THEMES[0], fontFamily: 'url(font)' }));

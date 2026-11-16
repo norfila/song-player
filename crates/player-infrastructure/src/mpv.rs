@@ -177,7 +177,7 @@ impl MpvEngine {
                 candidates.push(search_path.clone());
             }
         }
-        if let Some(explicit) = std::env::var_os("AUDIOPLAYER_MPV_PATH") {
+        if let Some(explicit) = std::env::var_os("SONG_PLAYER_MPV_PATH") {
             let explicit = PathBuf::from(explicit);
             if explicit.is_dir() {
                 for name in names {

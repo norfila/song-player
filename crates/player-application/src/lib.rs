@@ -86,9 +86,9 @@ pub trait StateStore: Send {
 
 // Own only this labelled filter so future equalizers or user filters survive
 // normalization toggles. `af add` replaces an existing matching label in mpv.
-const NORMALIZATION_LABEL: &str = "@sonora-loudness";
+const NORMALIZATION_LABEL: &str = "@songplayer-loudness";
 const NORMALIZATION_FILTER: &str =
-    "@sonora-loudness:lavfi=[dynaudnorm=f=150:g=15:p=0.95:m=10:r=0.16:n=1:t=0.001]";
+    "@songplayer-loudness:lavfi=[dynaudnorm=f=150:g=15:p=0.95:m=10:r=0.16:n=1:t=0.001]";
 
 pub const DEFAULT_SHORTCUTS: [(&str, &str); 11] = [
     ("playPause", "Space"),

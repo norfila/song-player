@@ -46,12 +46,6 @@ An upstream source link alone is not presented here as a complete source offer.
 This standalone executable supplies loudness analysis, waveforms, preview and
 edited-copy export. Playback continues to use the separate libmpv runtime.
 
-## NSIS installer template
-
-The customized Tauri CLI 2.12.4 template retains the original installation
-identity through the app rename. Its MIT license and exact upstream provenance
-are in `src-tauri/windows/LICENSE-TAURI-MIT` and `src-tauri/windows/README.md`.
-
 ## Rust components
 
 - libloading: ISC, https://github.com/nagisa/rust_libloading

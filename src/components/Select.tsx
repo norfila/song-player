@@ -185,21 +185,21 @@ export function Select({ value, onChange, options, label, className = '', disabl
       aria-haspopup="listbox"
       aria-controls={open ? listId : undefined}
       aria-activedescendant={open && active >= 0 ? `${listId}-${active}` : undefined}
-      className={`sonora-select ${open ? 'is-open' : ''} ${className}`}
+      className={`app-select ${open ? 'is-open' : ''} ${className}`}
       disabled={unavailable}
       onClick={() => open ? setOpen(false) : show()}
       onKeyDown={onKeyDown}
     >
-      {leadingIcon && <span className="sonora-select-icon" aria-hidden="true">{leadingIcon}</span>}
-      <span className="sonora-select-value">{options[selected]?.label || label}</span>
-      <ChevronDown className="sonora-select-chevron" size={14} aria-hidden="true" />
+      {leadingIcon && <span className="app-select-icon" aria-hidden="true">{leadingIcon}</span>}
+      <span className="app-select-value">{options[selected]?.label || label}</span>
+      <ChevronDown className="app-select-chevron" size={14} aria-hidden="true" />
     </button>
     {open && createPortal(<div
       ref={list}
       id={listId}
       role="listbox"
       aria-label={label}
-      className="sonora-select-list"
+      className="app-select-list"
       style={position}
       onPointerDown={event => event.preventDefault()}
     >
@@ -210,10 +210,10 @@ export function Select({ value, onChange, options, label, className = '', disabl
         aria-selected={option.value === value}
         aria-disabled={option.disabled || undefined}
         data-option-index={index}
-        className={`sonora-select-option ${index === active ? 'is-active' : ''} ${option.value === value ? 'is-selected' : ''}`}
+        className={`app-select-option ${index === active ? 'is-active' : ''} ${option.value === value ? 'is-selected' : ''}`}
         onPointerMove={() => { if (!option.disabled && active !== index) setActive(index); }}
         onClick={() => choose(index)}
-      ><span>{option.label}</span><Check size={14} className="sonora-select-check" aria-hidden="true" /></div>)}
+      ><span>{option.label}</span><Check size={14} className="app-select-check" aria-hidden="true" /></div>)}
     </div>, document.body)}
   </>;
 }

@@ -1,0 +1,39 @@
+{
+  "configuration": {
+    "description": "Sichere deine Einstellungen oder übertrage ausgewählte Bereiche auf einen anderen Rechner. Audiodateien, Wiedergabelisten und Warteschlangen werden separat verwaltet.",
+    "exportTitle": "Einstellungen exportieren",
+    "exportDescription": "Wähle die Bereiche, die in der Sicherung enthalten sein sollen.",
+    "export": "Sicherung exportieren",
+    "importTitle": "Einstellungen importieren",
+    "importDescription": "Öffne eine Song Player-Sicherung und prüfe die Änderungen vor dem Übernehmen.",
+    "chooseFile": "Sicherungsdatei auswählen",
+    "reviewTitle": "Import prüfen",
+    "reviewDescription": "Nur ausgewählte Bereiche werden übernommen. Öffne einen Bereich, um die aktuellen und importierten Werte zu vergleichen.",
+    "apply": "Auswahl importieren",
+    "undoTitle": "Letzten Import rückgängig machen",
+    "undoDescription": "Vor einem Import wird die bisherige Konfiguration automatisch gesichert. Sie bleibt auch nach einem Neustart zum Wiederherstellen verfügbar.",
+    "undo": "Vorherige Konfiguration wiederherstellen",
+    "exported": "Die Einstellungssicherung wurde exportiert.",
+    "importedSuccess": "Die ausgewählten Einstellungen wurden importiert. Du kannst die vorherige Konfiguration wiederherstellen.",
+    "restored": "Die vorherige Konfiguration wurde wiederhergestellt.",
+    "invalidFile": "Diese Datei ist keine unterstützte Song Player-Einstellungssicherung oder enthält ungültige Werte.",
+    "failed": "Die Aktion konnte nicht abgeschlossen werden. Überprüfe die Datei und die ausgewählten Einstellungen.",
+    "deviceHint": "Ausgabegerät und systemweite Tastenkürzel können je Rechner abweichen. Nur bei Bedarf einschließen.",
+    "libraryHint": "Überträgt Ordnerpfade. Beim Import werden sie zur bestehenden Ordnerliste hinzugefügt.",
+    "setting": "Einstellung",
+    "current": "Aktuell",
+    "imported": "Nach Import",
+    "customThemes": "Eigene Designs",
+    "on": "An",
+    "off": "Aus",
+    "sections": {
+      "general": "Allgemein & Sprache",
+      "appearance": "Darstellung & Designs",
+      "audio": "Audiowiedergabe",
+      "shortcuts": "Tastenkürzel",
+      "layout": "Fensteraufteilung",
+      "device": "Gerät & globale Kürzel",
+      "library": "Bibliotheksordner"
+    }
+  }
+}

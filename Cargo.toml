@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+members = ["crates/player-domain", "crates/player-application", "crates/player-infrastructure", "src-tauri"]
+default-members = ["crates/player-domain", "crates/player-application", "crates/player-infrastructure"]
+
+[workspace.package]
+version = "0.4.3"
+edition = "2021"
+license = "GPL-3.0-or-later"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "v5", "serde"] }
+player-domain = { path = "crates/player-domain" }
+player-application = { path = "crates/player-application" }
+player-infrastructure = { path = "crates/player-infrastructure" }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+

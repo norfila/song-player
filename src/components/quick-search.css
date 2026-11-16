@@ -1,0 +1,9 @@
+.quick-search-dialog { width: min(680px, calc(100vw - 40px)); padding: 18px; }
+.quick-search-caption { color: var(--secondary); font-size: calc(11px * var(--font-scale)); margin: 12px 6px; }
+.quick-search-results { max-height: min(440px, 55dvh); overflow: auto; }
+.quick-search-result { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 13px; color: var(--secondary); border-radius: var(--radius); }
+.quick-search-result[aria-selected='true'] { background: var(--selection); color: var(--accent); }
+.quick-search-result > span { flex: 1; min-width: 0; }
+.quick-search-result strong { display: block; font-size: calc(13px * var(--font-scale)); color: var(--text); overflow-wrap: anywhere; }
+.quick-search-result small { display: block; font-size: calc(11px * var(--font-scale)); margin-top: 4px; color: var(--secondary); overflow-wrap: anywhere; }
+.quick-search-footer { display: flex; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--border); padding: 14px 6px 0; margin-top: 12px; color: var(--muted); font-size: calc(10px * var(--font-scale)); }

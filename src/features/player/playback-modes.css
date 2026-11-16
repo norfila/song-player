@@ -1,0 +1,14 @@
+.playback-mode-button { position: relative; -webkit-app-region: no-drag; }
+.playback-mode-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.playback-mode-button.is-open { color: var(--accent); background: color-mix(in srgb, var(--accent) 7.06%, transparent); }
+.playback-mode-dot { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: currentColor; bottom: 0; left: calc(50% - 1.5px); }
+.playback-repeat-menu { z-index: 1000; overflow-y: auto; overscroll-behavior: contain; padding: calc(5px * var(--spacing)); border: 1px solid var(--border); border-radius: calc(var(--radius) * 1.125); background: var(--panel); color: var(--text); box-shadow: 0 15px 40px rgb(0 0 0 / calc(0.5333 * var(--shadow-strength))), 0 2px 8px rgb(0 0 0 / calc(0.2667 * var(--shadow-strength))); font-family: var(--font-family); -webkit-app-region: no-drag; }
+.playback-repeat-option { display: flex; align-items: center; gap: calc(10px * var(--spacing)); width: 100%; min-height: 40px; border-radius: calc(var(--radius) * 0.625); padding: calc(9px * var(--spacing)) calc(10px * var(--spacing)); color: inherit; font-size: calc(11px * var(--font-scale)); line-height: 1.4; text-align: left; cursor: pointer; }
+.playback-repeat-option > svg { flex-shrink: 0; color: var(--secondary); }
+.playback-repeat-option > span:first-of-type { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.playback-repeat-option:hover, .playback-repeat-option:focus { background: var(--selection); outline: none; }
+.playback-repeat-option[aria-checked='true'] { color: var(--accent); }
+.playback-repeat-option[aria-checked='true'] > svg { color: inherit; }
+.playback-repeat-radio { display: grid; place-items: center; width: 15px; height: 15px; border: 1px solid var(--border-strong); border-radius: 50%; flex-shrink: 0; }
+.playback-repeat-option[aria-checked='true'] .playback-repeat-radio { border-color: currentColor; }
+.playback-repeat-option[aria-checked='true'] .playback-repeat-radio::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }

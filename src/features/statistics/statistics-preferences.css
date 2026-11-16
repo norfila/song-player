@@ -1,0 +1,5 @@
+.statistics-settings-card > .tool-toggle-row { margin: calc(8px * var(--spacing)) 0 calc(20px * var(--spacing)); padding-bottom: calc(20px * var(--spacing)); border-bottom: 1px solid var(--border); }
+.statistics-threshold-settings > h4 { margin-bottom: calc(8px * var(--spacing)); }
+.statistics-threshold-fields > label { flex: 0 1 auto; width: calc(175px * var(--font-scale)); min-width: 0; max-width: 100%; }
+.statistics-threshold-fields input[type='number'] { width: calc(110px * var(--font-scale)); }
+.statistics-data-actions { margin-top: calc(24px * var(--spacing)); padding-top: calc(20px * var(--spacing)); border-top: 1px solid var(--border); }

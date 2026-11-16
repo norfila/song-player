@@ -1,0 +1,61 @@
+.sonora-select {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(8px * var(--spacing));
+  min-width: 0;
+  min-height: 32px;
+  max-width: 100%;
+  padding: calc(7px * var(--spacing)) calc(10px * var(--spacing));
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 0.75);
+  background: var(--panel);
+  color: var(--secondary);
+  text-align: left;
+  font-size: calc(11px * var(--font-scale));
+  line-height: 1.4;
+  -webkit-app-region: no-drag;
+  transition: border-color .15s, background .15s;
+}
+.sonora-select:hover:not(:disabled) { background: var(--surface); border-color: var(--border-strong); }
+.sonora-select.is-open { border-color: var(--accent); background: var(--surface); }
+.sonora-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.sonora-select-chevron { margin-left: 3px; color: var(--secondary); transition: transform .15s; }
+.sonora-select.is-open > .sonora-select-chevron { transform: rotate(180deg); }
+.sonora-select-icon { display: inline-flex; align-items: center; flex-shrink: 0; color: var(--secondary); }
+.sonora-select-value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sonora-select-list {
+  z-index: 1000;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: calc(5px * var(--spacing));
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 1.125);
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 15px 40px rgb(0 0 0 / calc(0.5333 * var(--shadow-strength))), 0 2px 8px rgb(0 0 0 / calc(0.2667 * var(--shadow-strength)));
+  font-size: calc(11px * var(--font-scale));
+  font-family: var(--font-family);
+  -webkit-app-region: no-drag;
+}
+.sonora-select-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(14px * var(--spacing));
+  min-height: 35px;
+  padding: calc(8px * var(--spacing)) calc(10px * var(--spacing));
+  border-radius: calc(var(--radius) * 0.625);
+  line-height: 1.4;
+  cursor: pointer;
+  user-select: none;
+}
+.sonora-select-option > span { min-width: 0; overflow-wrap: anywhere; }
+.sonora-select-option.is-active { background: var(--selection); }
+.sonora-select-option.is-selected { color: var(--accent); }
+.sonora-select-option[aria-disabled="true"] { opacity: .4; cursor: default; }
+.sonora-select-check { visibility: hidden; flex-shrink: 0; }
+.sonora-select-option.is-selected .sonora-select-check { visibility: visible; }
+@media (prefers-reduced-motion: reduce) {
+  .sonora-select, .sonora-select-chevron { transition: none; }
+}

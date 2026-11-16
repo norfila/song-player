@@ -1,0 +1,39 @@
+{
+  "workspace": {
+    "favorites": "Favoriten", "emptyFavorites": "Noch keine Favoriten", "emptyFavoritesHint": "Markiere Titel mit dem Herz, um sie hier schnell wiederzufinden.", "emptyPlaylistDescription": "Erstellt eine leere Wiedergabeliste. Titel kannst du anschließend aus der Bibliothek hinzufügen.", "queuePlaylistDescription": "Speichert die Titel der aktiven Warteschlange in ihrer aktuellen Reihenfolge als neue Wiedergabeliste.", "addContainingFolder": "Enthaltenden Ordner zur Bibliothek hinzufügen",
+    "statistics": "Statistik",
+    "membership": "Wiedergabelisten verwalten",
+    "membershipHint": "Zuordnung für {{count}} ausgewählte Titel. Abwählen entfernt sie aus der Liste.",
+    "searchPlaylists": "Wiedergabelisten suchen …",
+    "someSelected": "Enthält einen Teil der Auswahl",
+    "createNamedPlaylist": "Mit Suchtext neu erstellen",
+    "changeIcon": "Symbol ändern",
+    "uploadIcon": "Eigenes Bild auswählen",
+    "pinPlaylist": "In Seitenleiste anzeigen",
+    "favorite": "Zu Favoriten hinzufügen",
+    "unfavorite": "Aus Favoriten entfernen",
+    "equalizer": "Equalizer",
+    "editAudio": "Audiodatei bearbeiten",
+    "quickSearch": "Schnellsuche",
+    "quickSearchHint": "Musik suchen oder > für Aktionen …",
+    "actionSearchHint": "Aktionen · Pfeiltasten wählen, Enter führt aus",
+    "songSearchHint": "Titel, Interpret oder Album · Mit > nach Aktionen suchen",
+    "choose": "Auswählen",
+    "execute": "Ausführen",
+    "addOpenedFolder": "Ordner „{{name}}“ zur Bibliothek hinzufügen?",
+    "folderCount": "{{count}} Ordner",
+    "addFolder": "Hinzufügen",
+    "icons": {
+      "music": "Musik",
+      "headphones": "Kopfhörer",
+      "heart": "Herz",
+      "star": "Stern",
+      "disc": "Schallplatte",
+      "folder": "Ordner",
+      "moon": "Mond",
+      "sun": "Sonne",
+      "zap": "Blitz",
+      "coffee": "Kaffee"
+    }
+  }
+}

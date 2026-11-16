@@ -1,0 +1,39 @@
+{
+  "configuration": {
+    "description": "Back up your preferences or transfer selected categories to another computer. Audio files, playlists and queues are managed separately.",
+    "exportTitle": "Export settings",
+    "exportDescription": "Choose the categories to include in the backup.",
+    "export": "Export backup",
+    "importTitle": "Import settings",
+    "importDescription": "Open a Song Player backup and review the changes before applying them.",
+    "chooseFile": "Choose backup file",
+    "reviewTitle": "Review import",
+    "reviewDescription": "Only selected categories will be applied. Expand a category to compare current and imported values.",
+    "apply": "Import selected categories",
+    "undoTitle": "Undo last import",
+    "undoDescription": "Your previous configuration is backed up automatically before an import. It remains available to restore after restarting the app.",
+    "undo": "Restore previous configuration",
+    "exported": "Settings backup exported.",
+    "importedSuccess": "Selected settings imported. You can restore your previous configuration.",
+    "restored": "Previous configuration restored.",
+    "invalidFile": "This file is not a supported Song Player settings backup or contains invalid values.",
+    "failed": "The action could not be completed. Check the file and selected settings.",
+    "deviceHint": "Output devices and global shortcuts may differ between computers. Include only when needed.",
+    "libraryHint": "Transfers folder paths. Imported paths are added to the existing folder list.",
+    "setting": "Setting",
+    "current": "Current",
+    "imported": "After import",
+    "customThemes": "Custom themes",
+    "on": "On",
+    "off": "Off",
+    "sections": {
+      "general": "General & language",
+      "appearance": "Appearance & themes",
+      "audio": "Audio playback",
+      "shortcuts": "Keyboard shortcuts",
+      "layout": "Window layout",
+      "device": "Device & global shortcuts",
+      "library": "Library folders"
+    }
+  }
+}

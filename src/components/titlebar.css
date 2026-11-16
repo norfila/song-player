@@ -1,0 +1,19 @@
+:root { --titlebar-height: 42px; }
+.window-titlebar { height: var(--titlebar-height); display: flex; align-items: stretch; background: var(--sidebar); border-bottom: 1px solid var(--border); position: relative; z-index: 70; user-select: none; flex-shrink: 0; }
+.titlebar-brand { display: flex; align-items: center; gap: calc(9px * var(--spacing)); color: var(--text); padding: 0 calc(18px * var(--spacing)); font-size: calc(12px * var(--font-scale)); font-weight: 600; }
+.titlebar-brand svg { color: var(--accent); }
+.titlebar-menus { display: flex; align-items: stretch; gap: calc(1px * var(--spacing)); padding: calc(5px * var(--spacing)) 0; }
+.titlebar-menu-wrap { display: flex; position: relative; }
+.titlebar-menu-button { padding: 0 calc(12px * var(--spacing)); border-radius: calc(var(--radius) * 0.5); font-size: calc(12px * var(--font-scale)); color: var(--secondary); }
+.titlebar-menu-button:hover, .titlebar-menu-button.open { background: var(--surface); color: var(--text); }
+.titlebar-drag { flex: 1; min-width: 30px; }
+.window-controls { display: flex; }
+.window-controls > button { width: 46px; padding: 0; display: grid; place-items: center; color: var(--secondary); border-radius: 0; }
+.window-controls > button:hover:not(:disabled) { background: var(--surface); color: var(--text); }
+.window-controls > .window-close:hover:not(:disabled) { background: var(--error); }
+.window-controls > button:focus-visible { outline-offset: -4px; }
+.titlebar-popup { position: absolute; top: calc(100% + 5px); left: 0; width: max-content; min-width: 245px; max-width: min(430px, 90vw); background: var(--panel); border: 1px solid var(--border); border-radius: calc(var(--radius) * 1); padding: calc(6px * var(--spacing)); box-shadow: 0 16px 40px rgb(0 0 0 / calc(0.5333 * var(--shadow-strength))); }
+.titlebar-popup button { width: 100%; display: flex; align-items: center; gap: calc(8px * var(--spacing)); padding: calc(9px * var(--spacing)) calc(10px * var(--spacing)) calc(9px * var(--spacing)) calc(5px * var(--spacing)); text-align: left; font-size: calc(12px * var(--font-scale)); color: var(--text); border-radius: calc(var(--radius) * 0.5); }
+.titlebar-popup button:hover:not(:disabled), .titlebar-popup button:focus-visible { background: var(--surface-hover); outline: none; }
+.titlebar-check { width: 18px; height: 16px; color: var(--accent); flex-shrink: 0; display: grid; place-items: center; }
+.titlebar-popup kbd { margin-left: auto; padding-left: calc(28px * var(--spacing)); font: calc(10px * var(--font-scale)) var(--font-family); color: var(--secondary); white-space: nowrap; }

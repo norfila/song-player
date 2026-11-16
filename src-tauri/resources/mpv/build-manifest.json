@@ -1,0 +1,17 @@
+{
+  "platform": "windows-x86_64",
+  "provider": "shinchiro/mpv-winbuild-cmake",
+  "providerReference": "https://mpv.io/installation/",
+  "release": "20261111",
+  "releaseUrl": "https://github.com/shinchiro/mpv-winbuild-cmake/releases/tag/20261111",
+  "buildScriptsCommit": "bda10a2",
+  "mpvCommit": "bcde6b93cc",
+  "ffmpegCommit": "cd4e96eb3",
+  "archive": "mpv-dev-x86_64-20261111-git-bcde6b93cc.7z",
+  "archiveUrl": "https://github.com/shinchiro/mpv-winbuild-cmake/releases/download/20261111/mpv-dev-x86_64-20261111-git-bcde6b93cc.7z",
+  "archiveSha256": "273c079b11ea5575822f972756f4c9a71149a5c10130353abeb8586738938452",
+  "library": "libmpv-2.dll",
+  "librarySha256": "88504ee5560942a955405e99dfb5971368e4cf851321f36565bf2a667271db1b",
+  "libraryBytes": 121789952,
+  "license": "GPL-2.0-or-later; additional linked dependencies retain their own terms"
+}

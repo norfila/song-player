@@ -1,0 +1,35 @@
+# Dependencies and build output
+node_modules/
+dist/
+target/
+src-tauri/gen/
+
+# Local toolchain, scratch files, built installers and screenshots
+.tools/
+.tmp/
+artifacts/
+*.log
+
+# Native runtimes, fetched by scripts/setup-mpv.ps1 and scripts/setup-ffmpeg.ps1
+src-tauri/resources/mpv/*.dll
+src-tauri/resources/mpv/*.so*
+src-tauri/resources/mpv/*.dylib
+src-tauri/resources/ffmpeg/*.exe
+
+# Working notes, kept local
+PLAN.md
+docs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Claude Code, local only
+.claude/
+CLAUDE.local.md

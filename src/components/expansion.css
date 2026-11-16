@@ -1,0 +1,21 @@
+.modal.expansion-dialog { width: min(580px, calc(100vw - 40px)); max-height: calc(100dvh - 70px); overflow: auto; padding: calc(26px * var(--spacing)); }
+.expansion-dialog-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.expansion-dialog-heading h2 { font-size: calc(19px * var(--font-scale)); margin: 0; }
+.expansion-dialog-heading p { margin-top: 8px; font-size: calc(12px * var(--font-scale)); color: var(--secondary); }
+.expansion-search { display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 10px 12px; color: var(--secondary); }
+.expansion-search:focus-within { border-color: var(--accent); }
+.expansion-search input { width: 100%; min-width: 0; border: 0; background: transparent; color: var(--text); outline: none; font-size: calc(13px * var(--font-scale)); }
+.modal .expansion-search input:focus { border: 0; box-shadow: none; outline: none; }
+.membership-results { margin: 16px 0; max-height: 42dvh; overflow: auto; }
+.membership-choice { display: flex; gap: 12px; align-items: center; padding: 12px 8px; border-radius: var(--radius); cursor: pointer; font-size: calc(13px * var(--font-scale)); }
+.membership-choice:hover { background: var(--surface-hover); }
+.membership-choice input { accent-color: var(--accent); }
+.membership-choice > span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.membership-choice small { color: var(--secondary); font-size: calc(10px * var(--font-scale)); }
+.membership-choice > span small { display: block; margin-top: 4px; }
+.playlist-custom-icon { display: inline-block; object-fit: cover; flex-shrink: 0; border-radius: calc(var(--radius) * .5); }
+.playlist-icon-picker { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 24px 0; }
+.playlist-icon-picker .icon-button { width: 100%; height: 52px; border: 1px solid var(--border); }
+.expansion-dialog-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: space-between; }
+.expansion-error { color: var(--error); margin: 12px 0; font-size: calc(12px * var(--font-scale)); }
+.favorite-on { color: var(--accent); }

@@ -1,0 +1,54 @@
+/* Every component uses these semantic roles. The saved design replaces them at startup. */
+:root {
+  color-scheme: dark;
+  --bg: #141716;
+  --panel: #191D1B;
+  --surface: #232A26;
+  --surface-hover: #303C34;
+  --border: #35463B;
+  --text: #EEEEE8;
+  --secondary: #B1C2B6;
+  --muted: #82998B;
+  --accent: #8DE2CE;
+  --accent-text: #16392E;
+  --sidebar: #111613;
+  --player: #17231B;
+  --selection: #30483B;
+  --success: #9DD2AB;
+  --error: #EBAEA7;
+  --font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  --heading-font: 'Manrope', 'Segoe UI', sans-serif;
+  --font-scale: 1;
+  --radius: 8px;
+  --spacing: 1;
+  --shadow-strength: .6;
+  --accent-dim: color-mix(in srgb, var(--accent) 15%, var(--panel));
+  --accent-hover: color-mix(in srgb, var(--accent) 86%, var(--text));
+  --border-strong: color-mix(in srgb, var(--border) 70%, var(--secondary));
+  --shadow-color: rgb(0 0 0 / calc(.4 * var(--shadow-strength)));
+  --overlay: color-mix(in srgb, var(--bg) 78%, transparent);
+  --warning: #D4B27D;
+  /* Fill of the few solid accent controls. Flat by default; a design base may turn it into a material. */
+  --accent-fill: var(--accent);
+  --accent-fill-hover: var(--accent-hover);
+  --accent-edge: var(--accent);
+  --accent-glow: 0 0 0 0 transparent;
+  --accent-disabled-filter: none;
+  /* Top edge of the player bar: a plain border unless a design base draws a line of its own. */
+  --player-border: var(--border);
+  --player-edge: none;
+}
+:root[data-theme-base='light'] { --warning: #8C641C; }
+/* Gold is treated as metal: a lit top edge, the accent itself, and a deeper foot. All derived from
+   the accent, so own designs based on Gold keep the sheen with their own colour. */
+:root[data-theme-base='gold'] {
+  --warning: #E9A26B;
+  --accent-fill: linear-gradient(160deg, color-mix(in srgb, var(--accent) 58%, #FFF8E3) 0%, var(--accent) 44%, color-mix(in srgb, var(--accent) 76%, #4A3206) 100%);
+  --accent-fill-hover: linear-gradient(160deg, color-mix(in srgb, var(--accent) 42%, #FFF8E3) 0%, color-mix(in srgb, var(--accent) 88%, #FFF8E3) 44%, color-mix(in srgb, var(--accent) 84%, #4A3206) 100%);
+  --accent-edge: color-mix(in srgb, var(--accent) 70%, #4A3206);
+  --accent-glow: 0 4px 18px color-mix(in srgb, var(--accent) 16%, transparent);
+  --accent-dim: var(--selection); /* a dimmed gold would be brown */
+  --accent-disabled-filter: saturate(.25); /* same reason: unavailable gold goes pewter, not brown */
+  --player-border: transparent;
+  --player-edge: linear-gradient(90deg, var(--border) 0%, color-mix(in srgb, var(--accent) 62%, var(--border)) 50%, var(--border) 100%);
+}

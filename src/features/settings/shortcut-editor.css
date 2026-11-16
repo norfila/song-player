@@ -1,0 +1,51 @@
+.shortcut-editor-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(20px * var(--spacing));
+  padding: calc(18px * var(--spacing)) calc(20px * var(--spacing));
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 43.92%, transparent);
+}
+.shortcut-editor-intro p { margin: 0; color: var(--secondary); font-size: calc(12px * var(--font-scale)); line-height: 1.6; }
+.shortcut-editor-intro p span { display: block; margin-top: 3px; color: var(--muted); font-size: calc(11px * var(--font-scale)); }
+.shortcut-reset { flex-shrink: 0; font-size: calc(11px * var(--font-scale)); }
+.shortcut-editor-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16px * var(--spacing));
+  min-height: 60px;
+  padding: calc(10px * var(--spacing)) calc(16px * var(--spacing)) calc(10px * var(--spacing)) calc(20px * var(--spacing));
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 43.92%, transparent);
+}
+.shortcut-editor-row:last-child { border-bottom: 0; }
+.shortcut-editor-row > label { color: var(--secondary); font-size: calc(12px * var(--font-scale)); cursor: pointer; }
+.shortcut-editor-row.is-recording { background: color-mix(in srgb, var(--surface-hover) 21.96%, transparent); }
+.shortcut-editor-control { display: flex; align-items: center; gap: calc(8px * var(--spacing)); flex-shrink: 0; }
+.shortcut-capture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 35px;
+  min-width: 164px;
+  padding: calc(7px * var(--spacing)) calc(12px * var(--spacing));
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 0.875);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.shortcut-capture:hover:not(:disabled) { border-color: var(--accent); background: var(--surface-hover); }
+.shortcut-capture:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.shortcut-capture.recording { border-color: var(--accent); background: var(--surface-hover); color: var(--text); }
+.shortcut-capture kbd { border: 0; padding: 0; background: transparent; color: inherit; font-size: calc(11px * var(--font-scale)); }
+.shortcut-capture:disabled { opacity: .45; cursor: default; }
+.shortcut-recording-text { font-size: calc(11px * var(--font-scale)); }
+.shortcut-unassigned { color: var(--secondary); font-size: calc(11px * var(--font-scale)); }
+.shortcut-clear { width: 28px; height: 32px; }
+.shortcut-error { margin: 0; padding: calc(13px * var(--spacing)) calc(20px * var(--spacing)); color: var(--error); background: color-mix(in srgb, var(--error) 14.90%, transparent); font-size: calc(12px * var(--font-scale)); line-height: 1.5; border-bottom: 1px solid color-mix(in srgb, var(--error) 39.61%, transparent); }
+@media (max-width: 1100px) {
+  .shortcut-editor-intro { align-items: flex-start; flex-direction: column; gap: calc(12px * var(--spacing)); }
+  .shortcut-capture { min-width: 145px; }
+}

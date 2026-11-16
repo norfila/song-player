@@ -1,0 +1,95 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Song Player",
+  "version": "0.4.3",
+  "identifier": "dev.sonora.player",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://127.0.0.1:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Song Player",
+        "width": 1360,
+        "height": 860,
+        "minWidth": 940,
+        "minHeight": 650,
+        "center": true,
+        "backgroundColor": "#141817",
+        "visible": false,
+        "dragDropEnabled": true,
+        "decorations": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: http://asset.localhost https://asset.localhost data:; connect-src ipc: http://ipc.localhost; media-src 'self' asset: http://asset.localhost https://asset.localhost blob:; font-src 'self' data:",
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$APPDATA/dev.sonora.player/covers/**",
+          "$APPLOCALDATA/dev.sonora.player/covers/**",
+          "$APPCACHE/**"
+        ]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/icon.ico",
+      "icons/icon.png"
+    ],
+    "resources": {
+      "resources/mpv/": "mpv/",
+      "resources/ffmpeg/": "ffmpeg/",
+      "windows/LICENSE-TAURI-MIT": "installer-notices/LICENSE-TAURI-MIT"
+    },
+    "fileAssociations": [
+      {
+        "ext": [
+          "mp3",
+          "flac",
+          "wav",
+          "aiff",
+          "aif",
+          "m4a",
+          "m4b",
+          "aac",
+          "ogg",
+          "opus",
+          "wma",
+          "wv",
+          "ape",
+          "mpc",
+          "tta",
+          "mka",
+          "caf",
+          "m3u",
+          "m3u8"
+        ],
+        "name": "Sonora.Audio",
+        "description": "Song Player audio",
+        "role": "Viewer"
+      }
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": [
+          "German",
+          "English"
+        ],
+        "displayLanguageSelector": true,
+        "installerHooks": "./windows/hooks.nsh",
+        "template": "./windows/installer.nsi"
+      }
+    },
+    "shortDescription": "Local audio player",
+    "category": "Music"
+  }
+}

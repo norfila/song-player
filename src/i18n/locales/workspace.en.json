@@ -1,0 +1,39 @@
+{
+  "workspace": {
+    "favorites": "Favorites", "emptyFavorites": "No favorites yet", "emptyFavoritesHint": "Mark songs with the heart to find them here quickly.", "emptyPlaylistDescription": "Creates an empty playlist. You can add songs from your library afterward.", "queuePlaylistDescription": "Saves the songs in the active queue in their current order as a new playlist.", "addContainingFolder": "Add containing folder to library",
+    "statistics": "Statistics",
+    "membership": "Manage playlists",
+    "membershipHint": "Membership for {{count}} selected songs. Unchecking removes them from the playlist.",
+    "searchPlaylists": "Search playlists …",
+    "someSelected": "Contains some selected songs",
+    "createNamedPlaylist": "Create using search text",
+    "changeIcon": "Change icon",
+    "uploadIcon": "Choose your own image",
+    "pinPlaylist": "Show in sidebar",
+    "favorite": "Add to favorites",
+    "unfavorite": "Remove from favorites",
+    "equalizer": "Equalizer",
+    "editAudio": "Edit audio file",
+    "quickSearch": "Quick search",
+    "quickSearchHint": "Search music or > for actions …",
+    "actionSearchHint": "Actions · Arrow keys select, Enter executes",
+    "songSearchHint": "Song, artist or album · Use > to search actions",
+    "choose": "Select",
+    "execute": "Run",
+    "addOpenedFolder": "Add folder “{{name}}” to the library?",
+    "folderCount": "{{count}} folders",
+    "addFolder": "Add",
+    "icons": {
+      "music": "Music",
+      "headphones": "Headphones",
+      "heart": "Heart",
+      "star": "Star",
+      "disc": "Record",
+      "folder": "Folder",
+      "moon": "Moon",
+      "sun": "Sun",
+      "zap": "Lightning",
+      "coffee": "Coffee"
+    }
+  }
+}
